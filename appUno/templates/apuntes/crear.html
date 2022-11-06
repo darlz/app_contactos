@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block titulo %} Agregar nuevo Apunte {% endblock %}
+
+{% block contenido %}
+
+<div class="card">
+    <div class="card-header">
+        Crear Apunte
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Apuntes de contacto</h4>
+
+        {% include 'apuntes/form.html' %}
+
+    </div>
+    <div class="card-footer text-muted">
+
+    </div>
+</div>
+
+{% endblock %}

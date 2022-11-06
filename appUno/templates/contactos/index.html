@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block titulo %} Lista de Contactos {% endblock %}
+
+{% block contenido %}  
+
+<div class="card">
+    <div class="card-header">
+        <a name="" id="" class="btn btn-success" href="{% url 'crear_contacto' %}" role="button">Agregar Contacto</a>
+    </div>
+    <div class="card-body">
+        <h4 class="card-title">Contactos</h4>
+        
+<div class="table-responsive">
+    <table class="table table-primary">
+        <thead>
+            <tr>
+                <th scope="col">Nombres</th>
+                <th scope="col">Apellidos</th>
+                <th scope="col">Celular</th>
+                <th scope="col">Cedula</th>
+                <th scope="col">Email</th>
+                <th scope="col">Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for contacto in contactos %}
+            <tr class="">
+                <td>{{contacto.nombre}}</td>
+                <td>{{contacto.apellido}}</td>
+                <td>{{contacto.celular}}</td>
+                <td>{{contacto.cedula}}</td>
+                <td>{{contacto.email}}</td>
+                <td>
+                    <a name="" id="" class="btn btn-info" href="{% url 'editar_contacto' contacto.id %}" role="button">Editar</a> | 
+                    <a name="" id="" class="btn btn-danger" href="{% url 'eliminar_contacto' contacto.cedula %}" role="button">Borrar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+
+    </div>
+    <div class="card-footer text-muted">
+        Footer
+    </div>
+</div>
+
+{% endblock %} 
