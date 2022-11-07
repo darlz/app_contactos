@@ -1,0 +1,1 @@
+web: gunicorn Proyecto_UTE_DWyM.wsgi --log-file -
